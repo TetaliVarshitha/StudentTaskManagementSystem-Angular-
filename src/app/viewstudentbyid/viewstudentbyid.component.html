@@ -1,0 +1,56 @@
+<div class="container">
+    
+    <br/>
+    <h4 align="center">PLEASE SELECT STUDENT ID</h4><br/>
+    <div align="center">
+        <select style="width:16%;" type="text" [(ngModel)]="studentId" placeholder="Enter Student Id">
+            <option *ngFor='let user of users' value="{{user.studentId}}">{{user.studentId}}</option>
+          </select><br><br>
+        <button style="background-color: #594f8d; color: white;" (click)="getStudentById()">Show Details</button>
+    </div> 
+    <br/>
+    
+    <div class="card" *ngIf=student>
+        <div class="card">
+            <img style="width: 150px; height: 150px;" alt="No Profile Picture Available" class="card-img-top" src="http://localhost:8080/RESTAPI/image/{{profile.imageUrl}}">
+            
+        </div>
+        <h2>{{student.studentName | titlecase}}</h2>
+        <p><b>STUDENT ID:</b> {{student.studentId}}</p>
+        <p><b>GENDER:</b> {{student.gender}}</p>
+        <p><b>DATE OF BIRTH:</b> {{student.dateOfBirth}}</p>
+        <p><b>MOBILE NUMBER:</b> {{student.mobileNumber}}</p>
+        <p><b>EMAILID:</b> {{student.emailId}}</p>
+        <p><b>ADDRESS:</b> {{student.address}}</p>
+      </div>
+    <!-- <div *ngIf=student>
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th>ID</th>
+            <th>NAME</th>
+            <th>GENDER</th>
+            <th>DATE OF BIRTH</th>
+            <th>BRANCH</th>
+            <th>MOBILENUMBER</th>
+            <th>EMAILID</th>
+            <th>ADDRESS</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{student.studentId}}</td>
+                <td>{{student.studentName}}</td>
+                <td>{{student.gender | uppercase}}</td>
+                <td>{{student.dateOfBirth}}</td>
+                <td>{{student.branch}}</td>
+                <td>{{student.mobileNumber}}</td>
+                <td>{{student.emailId}}</td>
+                <td>{{student.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+</div>
+    
+

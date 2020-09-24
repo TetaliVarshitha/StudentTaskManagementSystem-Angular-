@@ -1,0 +1,29 @@
+<div class="container" align="center">
+    <head>
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    
+    <div class="container"><br/>
+      <h1></h1>
+      <h4><b>Please fill in this form to post a doubt</b></h4><br/>
+         <form action="/action_page.php" #registerForm="ngForm" class="form-group" (ngSubmit)="register(registerForm.value)">
+
+            <label>Select Task: </label><br>
+            <!-- <input type="text" name="taskId"  [(ngModel)]='doubt.taskId' required><br/><br/> -->
+            
+            <select name="taskId" style="width:25%;" [(ngModel)]="doubt.taskId" type="text" placeholder="Enter Task Id">
+              <option *ngFor='let task of tasks' [value]="task.taskId">{{task.description}} [{{task.subject}}]</option>
+            </select><br><br>
+
+            <label>Enter Question: </label><br>
+            <input style="height: 70px; width: 500px;" type="text" name="question" [(ngModel)]='doubt.question' required><br/><br/>
+           
+            <br/> 
+            <button style="background-color: #594f8d; color:white;" class="btn">Post Doubt</button>
+            <script>
+          </script>
+        </form> 
+    </div>
+    </div>
+        

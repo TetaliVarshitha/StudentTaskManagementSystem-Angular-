@@ -1,0 +1,22 @@
+<div class="container" align="center">
+    <head>
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    
+    <div class="container"><br/>
+      <h1></h1>
+      <h4><b>Please fill in this form to give a task</b></h4><br/>
+         <form action="/action_page.php" #registerForm="ngForm" class="form-group" (ngSubmit)="register(registerForm.value)">
+
+            <label>Enter Description: </label><br><input style="height: 50px; width: 500px;" type="text" name="description" [(ngModel)]='task.description' required><br/><br/>
+            <label>Enter Date of Assigning the task: </label><br><input [min]="minDate" type="date" name="uploadDate" [(ngModel)]='task.uploadDate' required><br/><br/>
+            <label>Enter Deadline: </label><br><input [min]="minDate" type="date" name="submitDate" [(ngModel)]='task.submitDate' required><br/><br/>
+            <br/> 
+            <button style="background-color: #594f8d; color: white;" class="btn">Give Task</button>
+            <script>
+          </script>
+        </form> 
+    </div>
+    </div>
+        

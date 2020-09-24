@@ -1,0 +1,110 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+   <!-- <div class="container">
+    <br/>
+    <div style=" padding-left: 165px;">
+    <div align="center">
+      
+        <button (click)="getReviewedDoubts()">Reviewed Doubts</button>
+     &nbsp;&nbsp;&nbsp;
+       
+         <button (click)="getPendingDoubts()">Pending Doubts</button>
+     </div> 
+     </div>
+    <br/>
+    <div class="modal fade" id="empEditPopup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                  
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        Enter Answer: <input type="text" name="answer" [(ngModel)]="editObject.answer" class="form-control"><br />
+                
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateDoubt()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div>
+        <div style=" padding-left: 165px;">
+    <table align="center" style="font-size:12px; width:800px;" class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th style="text-align:center;">QUESTION</th>
+            <th style="text-align:center;">ANSWER</th>
+            <th style="text-align:center;">UPDATE</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let doubt of doubts'>
+                <td>{{doubt.question}}</td>
+                <td>{{doubt.answer }}</td>
+                <td><button (click)="showEditPopup(doubt)" class="glyphicon glyphicon-pencil"></button></td>
+               
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div> -->
+
+<div class="container">
+    
+    <br/>
+    <div style=" padding-left: 580px;">
+        <input style="width:27%;" type="date" [(ngModel)]="date" placeholder="Enter Date">
+        <br><br>
+        <button style="background-color: #594f8d; color: white;" (click)="getReviewedDoubts()">Show Doubts</button>
+    </div> 
+    <br/>
+    <div>
+        <div class="modal fade" id="empEditPopup">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" data-dismiss="modal">&times;</span>
+                      
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-group">
+                            Enter Answer: <input type="text" name="answer" [(ngModel)]="editObject.answer" class="form-control"><br />
+                    
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary btn-sm" (click)="updateDoubt()" data-dismiss="modal">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div style=" padding-left: 165px;">
+    <table align="center" style="font-size:12px; width:800px;" class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th style="text-align:center;">QUESTION</th>
+            <th style="text-align:center;">ANSWER</th>
+            <th style="text-align:center;">UPDATE</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let doubt of doubts'>
+                <td>{{doubt.question}}</td>
+                <td>{{doubt.answer }}</td>
+                <td><button (click)="showEditPopup(doubt)" class="glyphicon glyphicon-pencil"></button></td>
+               
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+    

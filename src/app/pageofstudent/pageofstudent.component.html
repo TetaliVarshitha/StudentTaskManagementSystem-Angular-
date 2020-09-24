@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Side Navigation Bar</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body><!--<button (click)="myFunction()">print</button> -->
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>{{name}}</h2>
+        <ul>
+<li><a routerLink="studentprofile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+          
+            <li><a routerLink="displayalltasks"><i class="glyphicon glyphicon-folder-open"></i> Display all tasks</a></li>
+            <li><a routerLink="submit"><i class="glyphicon glyphicon-upload"></i> Submit</a></li>
+            <ul>
+                <li class="nav-item dropdown dropright">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-question-sign"></i> Discussion Forum
+                        </a>
+                        <div style="font-size: 15px; background-color: #bdb8d7; text-emphasis-color: white;" class="dropdown-menu dropdown-menu-right"aria-labelledby="navbarDropdownMenuLink">
+                          <a style="color: black;" class="demo" class="dropdown-item" routerLink="postdoubt">Post doubt</a>
+                          <a style="color: black;" class="dropdown-item" routerLink="displayalldoubts">Display all doubts</a>
+                          <a style="color: black;" class="dropdown-item" routerLink="displaymydoubts">Display my doubts</a>
+                        </div>
+                      </li>
+        </ul>
+
+            <li><a routerLink="checkreview"><i class="glyphicon glyphicon-check"></i> Check review</a></li>
+            <li><a routerLink="todo"><i class="glyphicon glyphicon-check"></i> to-do list</a></li>
+            <li><a routerLink=""><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+        </ul>
+    </div>
+    <div class="main_content">
+        
+        <div class="header">Welcome!! Have a nice day.</div>  
+        <div class="info">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<router-outlet></router-outlet>

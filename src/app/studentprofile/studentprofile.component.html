@@ -1,0 +1,93 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    <br>
+    <div style="padding-left: 600px;">
+    <div class="card" style="width: 18rem;">
+        <img style="width: 150px;" alt="No Profile Picture Available" class="card-img-top" src="http://localhost:8080/RESTAPI/image/{{profile.imageUrl}}">
+        </div>
+    </div>
+
+    <div class="container">
+    <br/>
+    <div class="modal fade" id="profileEditPopup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                  
+                </div>
+                <div class="modal-body">
+                    <form #imageForm=ngForm (ngSubmit)="OnSubmit(imageForm.value)" class="form-group">
+                        <img [src]="imageUrl" style="width:200px;height:200px">
+                        <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+                        <br>
+                        <button type="submit" class="btn-large btn-submit" [disabled]="Image.value==''">Upload</button>
+                     </form>
+                </div><br><br>
+            </div>
+        </div>
+    </div> 
+    <div class="modal fade" id="empEditPopup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                  
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        Enter Student Name: <input type="text" name="studentName" [(ngModel)]="editObject.studentName" class="form-control"><br />
+                        Enter Email Id: <input type="email" name="emailId" [(ngModel)]="editObject.emailId" class="form-control"><br />
+                        Enter Mobile Number: <input type="text" name="mobileNumber" [(ngModel)]="editObject.mobileNumber" class="form-control"><br />
+                        Enter Password: <input type="password" name="password" [(ngModel)]="editObject.password" class="form-control"><br />              
+                    </form>
+                </div><br><br>
+                <div class="modal-footer">
+                    <div class="center">
+                    <button class="btn btn-primary btn-sm" (click)="updateStudent()" data-dismiss="modal">Update</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div>
+        <button style = "color: black;  margin-left: 480px;
+        margin-right: auto;" (click)="showEditPopup1()">UPDATE PROFILE PIC</button><br><br>
+    <table align="center" style="width:450px;" class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th style="text-align: center;">STUDENT ID</th>
+            <td>{{user.studentId}}</td> 
+        </tr>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th style="text-align: center;">STUDENT NAME</th>
+            <td>{{user.studentName | titlecase}}</td> 
+        </tr>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th style="text-align: center;">DATE OF BIRTH</th>
+            <td>{{user.dateOfBirth}}</td> 
+        </tr>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th style="text-align: center;">GENDER</th>
+            <td>{{user.gender}}</td> 
+        </tr>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th style="text-align: center;">EMAIL ID</th>
+            <td>{{user.emailId}}</td> 
+        </tr>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th style="text-align: center;">MOBILE NUMBER</th>
+            <td>{{user.mobileNumber}}</td> 
+        </tr>
+        <div class="center">
+            <td><button style = "color: black;" (click)="showEditPopup(user)">EDIT</button></td> 
+        </div>
+        </thead>
+    </table>
+</div>
+</div>
+    
+
+

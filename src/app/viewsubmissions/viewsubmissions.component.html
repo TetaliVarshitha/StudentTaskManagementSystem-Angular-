@@ -1,0 +1,21 @@
+<h3 style=" padding-left: 165px;" align="center"><b>SUBMISSIONS</b></h3><br>
+<div style=" padding-left: 240px;">
+<div class="row offset-md-1" style="margin-top: 4px">
+    <div class="col-md-3" *ngFor="let submit of submits">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="http://localhost:8080/RESTAPI/image/{{submit.file1}}">
+            <div class="card-body">
+                <p class="card-text">{{submit.file1}}</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div>STUDENT ID: {{submit.studentId}}</div>
+                </div><br>
+                <div class="col">
+                    <div>TASK ID: {{submit.taskId}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

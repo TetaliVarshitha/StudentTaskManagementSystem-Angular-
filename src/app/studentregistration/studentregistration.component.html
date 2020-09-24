@@ -1,0 +1,93 @@
+   <html>
+   <head>
+         <!-- Latest compiled and minified CSS -->
+         <script>
+            alert('Hello');
+            console.log("Hi");
+            function validation1() {
+                var form = document.getElementById("form");
+                var email = document.getElementById("b").value;
+                var text = document.getElementById("text");
+                var pattern = /^[^ ]+@bvrithyderabad.edu.in$/;
+            
+                if (email.match(pattern)) {
+                    form.classList.add("valid");
+                    form.classList.remove("invalid");
+                    text.innerHTML = "Your Email Address is Valid.";
+                    text.style.color = "#00ff00";
+                } else {
+                    form.classList.remove("valid");
+                    form.classList.add("invalid");
+                    text.innerHTML = "Please Enter Valid Email Address.";
+                    text.style.color = "#ff0000";
+                }
+            }
+            </script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+      
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+        
+       </head>
+       <body>
+       <div class="contain" align="center">
+        <div style="color: white;" class="container" align="center">
+      <h1 align="center">Student Registration</h1><br/>
+      <div class="row justify-content-center">
+        <form #registerForm="ngForm" [class.has-error] = "registerForm.invalid && registerForm.touched && registerForm.errors?.required" class="form-group" (ngSubmit)="register(registerForm.value)" novalidate>
+            <p><label for="a">Enter Student Name: </label><input id="a" style="width:350px;" type="text" #name="ngModel" name="studentName" [(ngModel)]='student.studentName' required><br/>
+           </p> <span class="help-block" *ngIf="name.invalid && name.touched && name.errors?.required">
+                This field is required
+               </span>
+               <p> <label for="b">Enter Email: </label><input id="b" style="width:350px;" type="text" #emailId="ngModel" name="emailId" [(ngModel)]='student.emailId' required><br/>
+        </p> <span class="help-block" id="text" *ngIf="emailId.invalid && emailId.touched && emailId.errors?.required">
+                This field is required
+               </span>
+                
+              <!--- <p><label for="c">Enter Branch: </label><input id="c" style="width:350px;" type="text"#branch="ngModel" name="branch" [(ngModel)]='student.branch' required><br/>
+        </p><span class="help-block" *ngIf="branch.invalid && branch.touched && branch.errors?.required">
+                This field is required
+               </span> -->
+               <p><label for="d">Enter Date of Birth: </label><input id="d" style="width:350px; color:black;" type="date" #dateOfBirth="ngModel" name="dateOfBirth" [(ngModel)]='student.dateOfBirth' required><br/>
+        </p><span class="help-block" *ngIf="dateOfBirth.invalid && dateOfBirth.touched && dateOfBirth.errors?.required">
+                This field is required
+               </span>
+               <p>  <label for="e">Enter Gender: </label><input id="e" style="width:350px;" type="text" #gender="ngModel" name="gender" [(ngModel)]='student.gender' required><br/>
+        </p><span class="help-block" *ngIf="gender.invalid && gender.touched && gender.errors?.required">
+                This field is required
+               </span>
+               <p> <label for="f">Enter Mobile: </label><input id="f" style="width:350px;" type="text" #mobileNumber="ngModel" name="mobileNumber" [(ngModel)]='student.mobileNumber' required><br/>
+        </p><span class="help-block" *ngIf="mobileNumber.invalid && mobileNumber.touched && mobileNumber.errors?.required">
+                This field is required
+               </span>
+               <p> <label for="g">Enter Address: </label><input id="g" style="width:350px;" type="text" #address="ngModel" name="address" [(ngModel)]='student.address' required><br/>
+        </p> <span class="help-block" *ngIf="address.invalid && address.touched && address.errors?.required">
+                This field is required
+               </span>
+           <p><label for="h"> Enter Password: </label><input id="h" style="width:350px;" type="password" #password="ngModel" name="password" [(ngModel)]='student.password' required><br/>
+        </p> <span class="help-block" *ngIf="password.invalid && password.touched && password.errors?.required">
+                This field is required
+               </span>
+            
+           <span class="help-block" *ngIf="registerForm.invalid && registerForm.touched && registerForm.errors?.required ">
+            Please fill the required fields.
+           </span>
+               <!--
+            <input type="text" class="form-control" name="loginId" ngModel placeholder="Enter login id">
+            <input type="password" class="form-control" name="password" ngModel placeholder="Enter password"> -->
+            <br/> 
+            <div class="center">
+            <button class="btn btn-info" [disabled]="!registerForm.valid">Register</button>
+        </div>
+        </form>
+        </div>
+    </div>
+    </div>
+        </body>
+        </html>
+
+        

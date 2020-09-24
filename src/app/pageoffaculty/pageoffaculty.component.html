@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Side Navigation Bar</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body><!--<button (click)="myFunction()">print</button> -->
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>{{name}}</h2>
+        <ul>
+<li><a routerLink="facultyprofile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+          
+            <li><a routerLink="viewallstudents"><i class="glyphicon glyphicon-th-list"></i> View All Students</a></li>
+            <li><a routerLink="viewstudentbyid"><i class="glyphicon glyphicon-search"></i> View Student By Id</a></li>
+            <li><a routerLink="givetask"><i class="glyphicon glyphicon-pushpin"></i> Give task</a></li>
+            <li><a routerLink="displaytasks"><i class="glyphicon glyphicon-tasks"></i> Display tasks</a></li>
+            <li><a routerLink="viewsubmissions"><i class="glyphicon glyphicon-folder-open"></i> View Submissions</a></li>
+            <li><a routerLink="givereview"><i class="glyphicon glyphicon-check"></i> Give review</a></li>
+        
+            <li><a  routerLink="displaydoubts"><i class="glyphicon glyphicon-question-sign"></i> Display doubts</a></li>
+            <li><a routerLink=""><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+        </ul>
+    </div>
+    <div class="main_content">
+        
+        <div class="header">Welcome!! Have a nice day.</div>  
+        <div class="info">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<router-outlet></router-outlet>

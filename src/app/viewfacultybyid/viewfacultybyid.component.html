@@ -1,0 +1,54 @@
+<div class="container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <br/>
+    <h4 align="center">PLEASE SELECT FACULTY ID</h4><br/>
+    <div align="center">
+        <!-- <input type="text" [(ngModel)]="facultyId" placeholder="Enter Faculty Id"> <br/><br/> -->
+        <select style="width:16%;" type="text" [(ngModel)]="facultyId" placeholder="Enter Faculty Id">
+            <option *ngFor='let user of users' value="{{user.facultyId}}">{{user.facultyId}}</option>
+          </select><br><br>
+        <button style="background-color: #594f8d; color: white;" (click)="getFacultyById()">Show Details</button>
+    </div> 
+    <br/>
+
+<div class="card" *ngIf=faculty>
+    <div class="card">
+        <img style="width: 150px; height: 150px;" alt="No Profile Picture Available" class="card-img-top" src="http://localhost:8080/RESTAPI/image/{{profile.imageUrl}}">
+        
+    </div>
+  <h2>{{faculty.facultyName | titlecase}}</h2>
+  <p><b>FACULTY ID:</b> {{faculty.facultyId}}</p>
+  <p><b>GENDER:</b> {{faculty.gender}}</p>
+  <p><b>SUBJECT:</b> {{faculty.subject}}</p>
+  <p><b>MOBILE NUMBER:</b> {{faculty.mobileNumber}}</p>
+  <p><b>EMAILID:</b> {{faculty.emailId}}</p>
+  <p><b>ADDRESS:</b> {{faculty.address}}</p>
+</div>
+    <!-- <div *ngIf=faculty>
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th>ID</th>
+            <th>NAME</th>
+            <th>GENDER</th>
+            <th>SUBJECT</th>
+            <th>MOBILENUMBER</th>
+            <th>EMAILID</th>
+            <th>ADDRESS</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{faculty.facultyId}}</td>
+                <td>{{faculty.facultyName}}</td>
+                <td>{{faculty.gender | uppercase}}</td>
+                <td>{{faculty.subject}}</td>
+                <td>{{faculty.mobileNumber}}</td>
+                <td>{{faculty.emailId}}</td>
+                <td>{{faculty.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+</div>
+    

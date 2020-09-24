@@ -1,0 +1,62 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+</head>
+
+<div class="container">
+    <!-- <div class="modal fade" id="empEditPopup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Faculty Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        Enter Id: <input type="number" name="empId" [(ngModel)]="editObject.empId" class="form-control"><br />
+                        Enter Name: <input type="text" name="empName" [(ngModel)]="editObject.empName" class="form-control"><br />
+                        Enter Salary: <input type="number" name="salary" [(ngModel)]="editObject.salary" class="form-control"><br />
+                        Enter Gender: <input type="text" name="gender" [(ngModel)]="editObject.gender" class="form-control"><br />
+                        Enter Date of join: <input type="date" name="doj" [(ngModel)]="editObject.doj" class="form-control"><br />
+                        Enter Mobile: <input type="text" name="mobile" [(ngModel)]="editObject.mobile" class="form-control"><br />
+                        Enter Country: <input type="text" name="country" [(ngModel)]="editObject.country" class="form-control" ><br />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateEmp()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <h3 style=" padding-left: 165px;" align="center"><b>STUDENT DETAILS</b></h3><br/>
+    <div style=" padding-left: 165px;">
+<table style="font-size: 12px;" class="table table-bordered table-striped table-hover table-sm text-center">
+    <thead>
+    <tr style="background-color: #4b4276;" class="text-white">
+        <th style="text-align:center;">ID</th>
+        <th style="text-align:center;">NAME</th>
+        <th style="text-align:center;">GENDER</th>
+        <th style="text-align:center;">DATE OF BIRTH</th>
+        <th style="text-align:center;">MOBILENUMBER</th>
+        <th style="text-align:center;">EMAILID</th>
+        <th style="text-align:center;">ADDRESS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let student of students'>
+        <td>{{student.studentId}}</td>
+        <td>{{student.studentName | titlecase}}</td>
+        <td>{{student.gender | uppercase}}</td>
+        <td>{{student.dateOfBirth}}</td>
+        <td>{{student.mobileNumber}}</td>
+        <td>{{student.emailId}}</td>
+        <td>{{student.address}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</html>
+

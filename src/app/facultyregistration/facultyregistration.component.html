@@ -1,0 +1,70 @@
+<head>
+  <!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+</head>
+
+<div class="contain" align="center">
+
+  <div style="color:white;" class="container">
+    <h1>Faculty Registration</h1><br><br>
+      <form action="/action_page.php" [class.has-error] = "registerForm.invalid && registerForm.touched && registerForm.errors?.required" #registerForm="ngForm" class="form-group" (ngSubmit)="register(registerForm.value)">
+        <p><label for= "a"> Enter Faculty Name: </label><input id="a" style="width:350px;"type="text" #name="ngModel" name="facultyName" ng-model="Name"  [(ngModel)]='faculty.facultyName' required><br/>
+        </p> 
+          <span class="help-block" *ngIf="name.invalid && name.touched && name.errors?.required">
+            This field is required
+           </span>
+          <p> 
+          <label for ="b"> Enter Email: </label><input id="b" style="width:350px;" type="text" #emailId="ngModel" name="emailId" [(ngModel)]='faculty.emailId' required><br/>
+        </p>  <span class="help-block" *ngIf="emailId.invalid && emailId.touched && emailId.errors?.required">
+           This field is required
+           </span>
+          <p> <label for="c">Enter Subject: </label><input id="c" style="width:350px;" type="text"  #subject="ngModel" name="subject" [(ngModel)]='faculty.subject' required><br/>
+        </p>  <span class="help-block" *ngIf="subject.invalid && subject.touched && subject.errors?.required">
+            This field is required
+           </span>
+          <p><label for="d"> Enter Gender: </label> <input id="d" style="width:350px;" type="text"  #gender="ngModel" name="gender" [(ngModel)]='faculty.gender' required><br/>
+          </p>  <span class="help-block" *ngIf="gender.invalid && gender.touched && gender.errors?.required">
+            This field is required
+           </span>
+
+          <p> <label for="e">Enter Mobile: </label><input  id="e" style="width:350px;" type="text"  #mobileNumber="ngModel" name="mobileNumber" [(ngModel)]='faculty.mobileNumber' required><br/>
+          </p> <span class="help-block" *ngIf="mobileNumber.invalid && mobileNumber.touched && mobileNumber.errors?.required">
+            This field is required
+           </span>
+          <p>  <label for="f">Enter Address: </label><input id="f" style="width:350px;" type="text"  #address="ngModel" name="address" [(ngModel)]='faculty.address' required><br/>
+          </p> <span class="help-block" *ngIf="address.invalid && address.touched && address.errors?.required">
+            This field is required
+           </span>
+          <p> <label for="g">Enter Password: </label><input id="g" style="width:350px;" type="password"  #password="ngModel" name="password" [(ngModel)]='faculty.password' required><br/>
+          </p>  <span class="help-block" *ngIf="password.invalid && password.touched && password.errors?.required">
+            This field is required
+           </span>
+
+           <span class="help-block" *ngIf="registerForm.invalid && registerForm.touched && registerForm.errors?.required ">
+            Please fill the required fields.
+           </span>
+                   <!--
+          <input type="text" class="form-control" name="loginId" ngModel placeholder="Enter login id">
+          <input type="password" class="form-control" name="password" ngModel placeholder="Enter password"> -->
+          <br/> 
+          <div class="center">
+          <button class="btn btn-info"  [disabled]="!registerForm.valid" onclick="myFunction()">Register</button>
+         </div>
+         <script>
+          function myFunction() {
+               alert("I am an alert box!");
+        }
+        </script>
+      </form>
+  </div>
+  </div>
+
+      

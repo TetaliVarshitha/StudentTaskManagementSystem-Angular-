@@ -1,0 +1,30 @@
+<head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+</head>
+<div style=" padding-left: 300px;padding-right: 100px;">
+<div  id="myDIV" class="header">
+    <h2>My To Do List</h2>
+    <form #registerForm="ngForm" [class.has-error] = "registerForm.invalid && registerForm.touched && registerForm.errors?.required" class="form-group"  (ngSubmit)="register(registerForm.value)" novalidate>
+    <input type="text" name="description" #description="ngModel" [(ngModel)]='todo.description' placeholder="Title..." >
+    
+    <button class="btn btn-info" [disabled]="!registerForm.valid">Add</button>
+</form>
+  </div>
+</div>
+  <br>
+ <div style=" padding-left: 500px;padding-right: 300px;">
+
+<table>
+  <tbody>
+    <tr *ngFor='let t of todos'>
+        <td style="width: 500px;font-size: 18px;">{{t.description}}</td>
+       
+
+        <td><button (click)="deleteTodo(t)" class="glyphicon glyphicon-trash"></button></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+

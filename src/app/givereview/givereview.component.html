@@ -1,0 +1,37 @@
+<div class="container" align="center">
+    <head>
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    
+    <div class="container"><br/>
+      <h1></h1>
+      <h4><b>Please fill in this form to give a review</b></h4><br/>
+         <form action="/action_page.php" #registerForm="ngForm" class="form-group" (ngSubmit)="register(registerForm.value)">
+          
+            <label>Select Task Id: </label><br>
+            <!-- <input type="text" name="taskId"  [(ngModel)]='task.taskId' required><br/><br/> -->
+
+            <select name="taskId" style="width:16%;" [(ngModel)]="taskId" type="text" placeholder="Enter Task Id">
+              <option *ngFor='let user of users' value="{{user.taskId}}">{{user.taskId}}</option>
+            </select><br><br>
+
+            <label>Select Student Id: </label><br>
+           <!-- <input type="text" name="studentId" [(ngModel)]='task.studentId' required><br/><br/> -->
+
+           <select name="studentId" style="width:16%;" type="text" [(ngModel)]="studentId" placeholder="Enter StuentId">
+            <option *ngFor='let student of students' value="{{student.studentId}}">{{student.studentId}}</option>
+          </select><br><br>
+
+            <label>Enter Review: </label><br>
+             <input type="text" name="review" [(ngModel)]='task.review' required><br/><br/> 
+           
+ 
+            <br/> 
+            <button style="background-color: #594f8d; color: white;" class="btn">Give Review</button>
+            <script>
+          </script>
+        </form> 
+    </div>
+    </div>
+        

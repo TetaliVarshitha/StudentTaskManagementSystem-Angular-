@@ -1,0 +1,30 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    <div class="container">
+    <br/> 
+
+    <div>
+        <div style=" padding-left: 165px;">
+    <table style="font-size: 12px;" class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+        <tr style="background-color: #4b4276;" class="text-white">
+            <th style="text-align:center;">QUESTION</th>
+            <th style="text-align:center;">ANSWER</th>
+         
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let doubt of doubts'>
+                <td>{{doubt.question}}</td>
+                <td>{{doubt.answer }}</td>
+            
+               
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+    
