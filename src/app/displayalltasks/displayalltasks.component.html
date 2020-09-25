@@ -5,6 +5,32 @@
 
 </head>
 <br/>
+<div class="modal fade" id="empEditPopup">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" data-dismiss="modal">&times;</span>
+              
+            </div>
+            <div class="modal-body">
+                <h4 align="center">{{str}}</h4>
+            </div><br><br>
+        </div>
+    </div>
+</div> 
+<div class="modal fade" id="empEditPopup1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" data-dismiss="modal">&times;</span>
+              
+            </div>
+            <div class="modal-body">
+                <h4 align="center">{{str1}}</h4>
+            </div><br><br>
+        </div>
+    </div>
+</div> 
 <div class="container">
     <div style=" padding-left: 165px;">
 <table style="font-size: 12px;" class="table table-bordered table-striped table-hover table-sm text-center">
@@ -15,6 +41,9 @@
         <th style="text-align:center;">ASSIGNED DATE</th>
         <th style="text-align:center;">DEADLINE</th>
         <th style="text-align:center;">SUBJECT</th>
+        <th style="text-align:center;">CHECK STATUS</th>
+        <th style="text-align:center;">REVIEW</th>
+
     </tr>
     </thead>
     <tbody>
@@ -24,8 +53,8 @@
         <td>{{task.uploadDate}}</td>
         <td>{{task.submitDate}}</td>
         <td>{{task.subject}}</td>
-
-        
+        <td><button class="btn btn-primary btn-sm" (click)="showEditPopup(task.taskId)" data-dismiss="modal">Check Status</button></td>
+        <td><button class="btn btn-primary btn-sm" (click)="showEditPopup1(task.taskId)" data-dismiss="modal">Review</button></td>
     </tr>
     </tbody>
 </table>

@@ -94,6 +94,16 @@ export class FacultyService {
     return this.object;
   }
 
+  check(taskId: any, studentId : any) {
+    this.result = taskId + ' ' + studentId;
+    return this.httpClient.get('RESTAPI/webapi/myresource/check/' + this.result);
+  }
+
+  check1(taskId: any, studentId : any) {
+    this.result = taskId + ' ' + studentId;
+    return this.httpClient.get('RESTAPI/webapi/myresource/check1/' + this.result);
+  }
+
    registerFaculty(faculty: any) {
      return this.httpClient.post('RESTAPI/webapi/myresource/registerFaculty', faculty);
    }
